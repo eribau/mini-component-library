@@ -32,7 +32,10 @@ const SIZES = {
 const ProgressBar = ({ value, size }) => {
 	const styles = SIZES[size];
   	return 	<Wrapper style={styles} value={value}>
-			<ProgressBarBase value={value} max="100">{value}</ProgressBarBase>
+			<VisuallyHidden>
+				<label for="progressbar">Progress bar</label>
+			</VisuallyHidden>
+			<ProgressBarBase id="progressbar" value={value} aria-valuenow={value} max="100">{value}</ProgressBarBase>
 		</Wrapper>;
 };
 
